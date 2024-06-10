@@ -22,7 +22,7 @@ def read_tasks():
     return tasks
 
 @app.get("/task/{task_id}", response_model=Task)
-def read_task(task_id):
+def read_task(task_id : UUID):
     for task in tasks:
         if task.id == task_id:
             return task
