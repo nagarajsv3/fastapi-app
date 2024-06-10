@@ -7,3 +7,5 @@ http://localhost:8000/redoc
 
 To run
 (fastapivenv) PS C:\Naga\Learning\pythonprojects\fastapi-app> python main.py
+OR
+uvicorn main:app --reload
