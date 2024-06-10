@@ -9,3 +9,9 @@ To run
 (fastapivenv) PS C:\Naga\Learning\pythonprojects\fastapi-app> python main.py
 OR
 uvicorn main:app --reload
+
+
+Topics Covered : 
+1. FAST API
+2. Pickle Serialization and Deserialization
+3. Adding Middleware to FASTAPI app
