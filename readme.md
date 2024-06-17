@@ -10,8 +10,15 @@ To run
 OR
 uvicorn main:app --reload
 
+with auth enabled
+openssl rand -hex 32
+uvicorn mainwithauth:app --reload
 
 Topics Covered : 
 1. FAST API
 2. Pickle Serialization and Deserialization
 3. Adding Middleware to FASTAPI app
+4. JWT Auth Enabled
+5. Hashing
+6. JWT Encode and Decode 
+
