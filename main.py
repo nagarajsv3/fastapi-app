@@ -1,4 +1,5 @@
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Depends, status
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from pydantic import BaseModel
 from typing import List, Optional, Dict
 from uuid import UUID, uuid4
@@ -28,7 +29,7 @@ class RateLimiterMiddleware(BaseHTTPMiddleware):
         print("*****Inside 333333 RateLimiterMiddleware dispatch- Begin ")
         client_ip = request.client.host
         current_time = time.time()
-        if current_time - self.rate_limit_records[client_ip] < 1 : #1 request per second
+        if current_time - self.rate_limit_records[client_ip] < -1 : #1 request per second
             return Response(content="Rate Limit Exceeded" , status_code=429)
 
         self.rate_limit_records[client_ip] = current_time
